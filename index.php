@@ -159,7 +159,17 @@ $user_avatar = 'img/user.jpg';
                 'url' => 'img/lot-6.jpg'
             ]
         ];
+        
+        function formated($number) {
+            $num = ceil($number);
+                if ($num > 1000) {
+                    $num = number_format($num, 0, '.', ' ');
+                }
+            $num .= ' ₽';
+            return $num; 
+        }
         ?>
+        
         
         <ul class="lots__list">
 
@@ -175,10 +185,17 @@ $user_avatar = 'img/user.jpg';
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
                             <span class="lot__cost"><?=$val['price']; ?><b class="rub">р</b></span>
+                        
 
                         </div>
+                        <div class="lot__rate">
+                            <span class="lot__amount">Текущая цена</span>
+                                
+                            <span class="lot__cost"><?=formated($val['price']);?>
+                            </span>
+                        </div>
+                                                
                         <div class="lot__timer timer">
-
                         </div>
                     </div>
         </div>
