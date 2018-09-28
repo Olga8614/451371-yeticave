@@ -33,7 +33,7 @@ function time_left($lefttomidnight) {
     $secinminutes = $minutes*60;
     $seconds = $left-$sekinhours-$secinminutes;
 
-$lefttomidnight = "Осталось: ". $hours . "h ". $minutes . "m " . $seconds . "sec";
+$lefttomidnight = $hours . ":". $minutes . ":" . $seconds;
     return $lefttomidnight;
     }
 ?>
