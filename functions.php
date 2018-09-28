@@ -25,4 +25,16 @@ function formated($number) {
             return $num; 
         }
 
+function time_left($lefttomidnight) {
+    $left = strtotime('today')-strtotime('now')+86400;
+    $hours = floor($left/3600);
+    $sekinhours = $hours*3600;
+    $minutes = floor(($left-$sekinhours)/60);
+    $secinminutes = $minutes*60;
+    $seconds = $left-$sekinhours-$secinminutes;
+
+$lefttomidnight = "Осталось: ". $hours . "h ". $minutes . "m " . $seconds . "sec";
+    return $lefttomidnight;
+    }
 ?>
+

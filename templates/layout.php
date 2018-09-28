@@ -63,11 +63,11 @@
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <?php foreach ($categories as $val) ;?>
+            <?php foreach ($categories as $val); ?> 
             <li class="nav__item">
                 <a href="pages/all-lots.html"><?=$val['ctg-name'];?></a>
             </li>
-            <php endforeach; ?></php>
+              
         </ul>
     </nav>
     <div class="main-footer__bottom container">
