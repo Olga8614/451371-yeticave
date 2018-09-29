@@ -31,7 +31,7 @@
                             <span class="lot__amount">Текущая цена</span>
                             <span class="lot__cost"><?=formated($val['price']);?></span>
                         </div>
-                        <div class="lot__timer timer">
+                        <div class="lot__timer timer"><?=time_left($lefttomidnight);?>
                         </div>
                     </div>
             </div>
