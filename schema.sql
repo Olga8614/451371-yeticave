@@ -12,14 +12,14 @@ CREATE TABLE users (
     pass VARCHAR(15) NOT NULL,
     username CHAR(50) NOT NULL,
     useradres CHAR(128) NOT NULL,
-    avatar FILE(256),
+    avatar CHAR(256),
     registration DATETIME NOT NULL
 );
 CREATE TABLE lots (
    lot_id INT AUTO_INCREMENT PRIMARY KEY,
    lot_name CHAR(128) NOT NULL,
    lot_description CHAR(256) NOT NULL,
-   lot_picture FILE(256) NOT NULL,
+   lot_picture CHAR(256) NOT NULL,
    lot_category INT NOT NULL,
    init_price CHAR(15) NOT NULL,
    current_price CHAR(15) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE rates (
     rate_date DATETIME NOT NULL,
     rate_sum INT NOT NULL,
     rate_buyer INT NOT NULL,
-    lot_id INT NOT NULL,
+    lot_id INT NOT NULL
 );
 CREATE UNIQUE INDEX categ ON categories(category);
 CREATE UNIQUE INDEX username ON users(username);
