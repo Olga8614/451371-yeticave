@@ -4,7 +4,8 @@ CREATE DATABASE 451371-yeticave
 USE 451371-yeticave;
 CREATE TABLE categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    category CHAR(128)
+    category CHAR(128),
+    ctg_class CHAR(128)
 );
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
