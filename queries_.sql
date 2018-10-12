@@ -1,7 +1,7 @@
 INSERT INTO categories
     (category, ctg-class)
 VALUES 
-    ('Доски и лыжи', 'promo__item--boards'),
+    ('Доски и лыжи@', 'promo__item--boards'),
     ('Крепления', 'promo__item--attachment'),
     ('Ботинки', 'promo__item--boots'),
     ('Одежда', 'promo__item--clothing'),
@@ -38,7 +38,7 @@ VALUES
 SELECT category FROM categories ORDER BY id;
 
 #получить самые новые открытые лоты
-SELECT lots.lot_name, lots.init_price, lots.lot_picture, (SELECT MAX(rates.rate_sum) FROM rates where lots.id=rates.lot_id), (SELECT COUNT(rates.lot.id) from rates where lots.id=rates.lot.id), lot_category FROM lots WHERE end_date > NOW();
+SELECT lots.lot_name, lots.init_price, lots.lot_picture, (SELECT MAX(rates.rate_sum) FROM rates where lots.id=rates.lot_id), (SELECT COUNT(rates.lot_id) from rates where lots.id=rates.lot_id), lot_category FROM lots WHERE end_date > NOW();
    
 #показать лот по его id
 SELECT lots.id, lots.lot_name, categories.category FROM lots WHERE lot.lot_category=categories.id;

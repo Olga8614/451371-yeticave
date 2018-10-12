@@ -66,7 +66,7 @@
             <?php 
             foreach ($categories as $val): ?>
             <li class="nav__item">
-                <a href="pages/all-lots.html"><?=$val['ctg-name']?></a>
+                <a href="pages/all-lots.html"><?=$val['category']?></a>
             </li>
             <?php endforeach; ?>
     

@@ -17,14 +17,22 @@ function include_template($name, $data) {
 }
 
 function formated($number) {
-            $num = ceil($number);
-                if ($num > 1000) {
-                    $num = number_format($num, 0, '.', ' ');
-                }
-            $num .= ' ₽';
-            return $num; 
-        }
+    $num = ceil($number);
+    if ($num > 1000) {
+    $num = number_format($num, 0, '.', ' ');
+    }
+    $num .= ' ₽';
+    return $num; 
+    }
 
+function get_category($id) {
+    $con = mysqli_connect("localhost", "root", "", "451371-yeticave");
+    mysqli_set_charset($con, "utf8");
+    $select = "SELECT category FROM categories WHERE id = '$id'";
+    $query = mysqli_query($con, $select);
+    $result = mysqli_fetch_assoc($query);
+    return $result['category'];
+}
 function time_left($lefttomidnight) {
     $left = strtotime('today')-strtotime('now')+86400;
     $hours = floor($left/3600);
