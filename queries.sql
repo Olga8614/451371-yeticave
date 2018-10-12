@@ -1,7 +1,7 @@
 INSERT INTO categories
-    (category, ctg-class)
+    (category, ctg_class)
 VALUES 
-    ('Доски и лыжи@', 'promo__item--boards'),
+    ('Доски и лыжи', 'promo__item--boards'),
     ('Крепления', 'promo__item--attachment'),
     ('Ботинки', 'promo__item--boots'),
     ('Одежда', 'promo__item--clothing'),
@@ -12,8 +12,8 @@ VALUES
 INSERT INTO users
     (email, pass, username, useradres, avatar, registration)
 VALUES
-    ('frodo@mail.ru', 'test1234', 'Фродо', '222222 Средиземье 13', '..\img\user.jpg', '1538503408'),
-    ('gandalf@mail.ru', 'test1234', 'Гендальф', '222222 Средиземье 1', '..\img\user.jpg', '1538503409')
+    ('frodo@mail.ru', 'test1234', 'Фродо', '222222 Средиземье 13', '..\img\user.jpg', '10.10.2018'),
+    ('gandalf@mail.ru', 'test1234', 'Гендальф', '222222 Средиземье 1', '..\img\user.jpg', '10.10.2018')
 ;
 
 INSERT INTO lots 
@@ -30,15 +30,15 @@ values
 INSERT INTO rates
     (rate_date, rate_sum, rate_buyer, lot_id)
 VALUES
-    ('1538503647', '12099', '2', '1'),
-    ('1538503650', '13099', '2', '1')
+    ('10.10.2018', '12099', '2', '1'),
+    ('10.11.2018', '13099', '2', '1')
 ;
 
 #получить все категории
 SELECT category FROM categories ORDER BY id;
 
 #получить самые новые открытые лоты
-SELECT lots.lot_name, lots.init_price, lots.lot_picture, (SELECT MAX(rates.rate_sum) FROM rates where lots.id=rates.lot_id), (SELECT COUNT(rates.lot_id) from rates where lots.id=rates.lot_id), lot_category FROM lots WHERE end_date > NOW();
+SELECT lots.lot_name, lots.init_price, lots.lot_picture, (SELECT MAX(rates.rate_sum) FROM rates where lots.id=rates.lot_id), (SELECT COUNT(rates.lot.id) from rates where lots.id=rates.lot.id), lot_category FROM lots WHERE end_date > NOW();
    
 #показать лот по его id
 SELECT lots.id, lots.lot_name, categories.category FROM lots WHERE lot.lot_category=categories.id;
